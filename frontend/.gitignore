@@ -1,0 +1,45 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+# ...sauf les polices d'icones emises DANS le build : Expo les copie
+# sous dist/assets/node_modules/. Sans elles, les icones s'affichent
+# en carres vides une fois deploye.
+!dist/assets/node_modules/
+!dist/assets/node_modules/**
+
+# Expo
+.expo/
+# dist/ volontairement NON ignore : le front compile est versionne
+# et copie tel quel par le Dockerfile (voir ../.gitignore).
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example

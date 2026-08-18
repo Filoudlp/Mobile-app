@@ -1,0 +1,40 @@
+# Sources du front : seul frontend/dist est copié (déjà compilé).
+frontend/node_modules
+frontend/.expo
+frontend/.metro-cache
+frontend/app
+frontend/src
+frontend/assets
+frontend/*.json
+frontend/*.js
+frontend/*.ts
+
+# Secrets et artefacts locaux — ne doivent jamais entrer dans l'image.
+**/.env
+**/.env.*
+!**/.env.example
+**/__pycache__
+**/*.pyc
+**/server.log
+backend/requirements-dev.txt
+
+# Divers
+.git
+.gitignore
+**/.DS_Store
+
+# Environnements virtuels locaux : ~287 Mo qui n'ont rien a faire dans
+# l'image. Les dependances sont installees par pip depuis requirements.txt.
+backend/.venv
+backend/venv
+backend/env
+
+# strlib_repo : brouillons et code jamais importe par les services web.
+backend/strlib_repo/core/To check
+backend/strlib_repo/build
+backend/strlib_repo/.vscode
+
+# Sources documentaires ayant servi a generer les .json (7,5 Mo) : aucun
+# module ne les ouvre a l'execution.
+backend/strlib_repo/ressource/*.pdf
+backend/strlib_repo/ressource/*.xlsx

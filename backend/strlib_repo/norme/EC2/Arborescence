@@ -1,0 +1,98 @@
+ec2/
+│
+├── __init__.py
+│
+├── constants.py                        # Tableaux de référence EC2 (tableau 3.1, 7.4N, etc.)
+│
+├── elu/
+│   ├── __init__.py
+│   ├── flexion.py                      # Flexion simple & composée — §6.1
+│   ├── effort_tranchant.py            # Effort tranchant — §6.2
+│   ├── torsion.py                      # Torsion — §6.3
+│   ├── interaction_v_t.py             # Interaction V + T — §6.3.2
+│   ├── poinconnement.py               # Poinçonnement — §6.4 (dalles + semelles)
+│   ├── compression.py                 # Compression + Flambement — §6.1 + §5.8
+│   └── bielles_tirants.py            # Bielles-tirants — §6.5
+│
+├── els/
+│   ├── __init__.py
+│   ├── contraintes.py                 # Limitation des contraintes — §7.2
+│   ├── fissuration.py                 # Fissuration (directe + simplifiée) — §7.3
+│   ├── fleche_simplifiee.py           # Flèche L/d — §7.4.2
+│   └── fleche_rigoureuse.py           # Flèche par intégration courbures — §7.4.3
+│
+├── durabilite/
+│   ├── __init__.py
+│   ├── enrobage.py                    # Enrobage cnom — §4.4
+│   └── classes_exposition.py          # Classes X0→XA — §4.2
+│
+├── dispositions/
+│   ├── __init__.py
+│   ├── ancrage.py                     # Longueurs d'ancrage — §8.4
+│   ├── recouvrement.py               # Longueurs de recouvrement — §8.7
+│   ├── espacement.py                  # Espacements min/max — §8.2 & §9
+│   ├── armatures_min_max.py           # As,min & As,max — §9.2→9.6
+│   └── armatures_transversales.py     # Dispositions cadres/étriers — §9.2.2
+│
+├── feu/
+│   ├── __init__.py
+│   ├── materiaux_feu.py               # Propriétés à chaud — §3 EC2-1-2
+│   ├── isotherme_500.py               # Méthode isotherme 500°C — Annexe B.1
+│   ├── methode_zones.py              # Méthode par zones — Annexe B.2
+│   ├── methode_tabulee.py            # Méthodes tabulées — §5 EC2-1-2
+│   └── profils_temperature.py        # Profils température — Annexe A EC2-1-2
+│
+├── elements/
+│   ├── __init__.py
+│   ├── poutre.py                       # Façade Poutre
+│   ├── poteau.py                       # Façade Poteau
+│   ├── dalle.py                        # Façade Dalle
+│   ├── semelle.py                      # Façade Semelle
+│   ├── voile.py                        # Façade Voile
+│   └── console_courte.py             # Façade Console courte
+│
+└── utils/
+    ├── __init__.py
+    ├── interpolation.py               # Interpolation tableaux
+    └── diagrammes.py                  # Génération σ-ε
+
+
+ec2/
+│
+├── __init__.py
+├── constants.py                        # Tableaux EC2 (3.1, 7.2N, 7.4N…)
+├── fluage_retrait.py                   # §3.1.4 — φ(∞,t0), εcs
+│
+├── elu/
+│   ├── __init__.py
+│   ├── flexion.py                      # Flexion simple (Ned=0) & composée — §6.1
+│   ├── effort_tranchant.py             # §6.2
+│   ├── torsion.py                      # §6.3
+│   ├── interaction_v_t.py              # §6.3.2
+│   ├── poinconnement.py                # §6.4
+│   ├── compression.py                  # Compression simple — §6.1
+│   ├── flambement.py                   # §5.8 (courbure + raideur + classif)
+│   └── bielles_tirants.py             # §6.5
+│
+├── els/
+│   ├── __init__.py
+│   ├── contraintes.py                  # §7.2
+│   ├── fissuration.py                  # §7.3
+│   └── fleche.py                       # §7.4 (simplifiée + rigoureuse)
+│
+├── durabilite/
+│   ├── __init__.py
+│   ├── enrobage.py                     # §4.4
+│   └── classes_exposition.py           # §4.2
+│
+├── dispositions/
+│   ├── __init__.py
+│   ├── ancrage.py                      # §8.4
+│   ├── recouvrement.py                 # §8.7
+│   └── armatures_min_max.py            # §9.2→9.6 (min, max, espacement, transversales)
+│
+└── feu/
+    ├── __init__.py
+    ├── materiaux_feu.py                # §3 EC2-1-2
+    ├── methode_tabulee.py              # §5 EC2-1-2
+    └── isotherme_500.py                # Annexe B.1 EC2-1-2

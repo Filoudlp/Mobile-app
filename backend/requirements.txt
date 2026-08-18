@@ -1,0 +1,18 @@
+# Dépendances de production C-Lab.
+# Liste volontairement minimale : seuls les paquets réellement importés par
+# le serveur. L'outillage de développement et les paquets inutilisés
+# (pandas, numpy, boto3, pytest, black…) sont dans requirements-dev.txt —
+# les embarquer ferait plusieurs centaines de Mo pour rien.
+
+fastapi==0.110.1
+uvicorn[standard]==0.25.0
+pydantic>=2.6.4
+motor==3.3.1
+# pymongo doit rester epingle : motor 3.3.1 utilise des symboles internes
+# (_QUERY_OPTIONS) supprimes dans les pymongo plus recents. Sans cette
+# ligne, l'import du serveur echoue au demarrage.
+pymongo==4.5.0
+python-dotenv>=1.0.1
+bcrypt==4.1.3
+PyJWT>=2.8.0
+stripe>=9.0.0

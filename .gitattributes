@@ -1,0 +1,15 @@
+# Normalisation des fins de ligne : le depot est edite sous Windows mais
+# l'image Docker tourne sous Linux. On stocke tout en LF pour eviter que
+# chaque fichier apparaisse modifie d'une machine a l'autre.
+* text=auto eol=lf
+
+# Fichiers binaires : jamais de conversion.
+*.png binary
+*.jpg binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.xlsx binary
